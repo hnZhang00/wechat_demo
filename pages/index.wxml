@@ -1,12 +1,5 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="usermotto">
-    <text class="user-motto">{{title}}</text>
-  </view>
-</view>
-<view class="retailStore">
-   <view class="cnaps  borderBottom">
-    <text>所在城市</text>
-    <input class='m-bbt' placeholder-class='plhStyle' type='number' maxlength='50' placeholder='' bindinput="bindKeyInput" value='{{province}} {{city}}' disabled></input>
-  </view>
+<view class="index-page">
+  <text>所在城市： {{province}} {{city}} {{district}}</text>
+  <button class="btn" bindtap="goPageList">选择</button>
 </view>

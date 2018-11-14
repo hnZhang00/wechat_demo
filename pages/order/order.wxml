@@ -1,0 +1,26 @@
+<!--list.wxml-->
+<view class="page">
+	<view class="info">
+		<view class="info-icon"></view>
+		<view class="info-content">
+			<view class="info-title">{{shopInfo.title}}</view>
+			<view class="info-text">{{shopInfo.text}}</view>
+		</view>
+	</view>
+	<view class="content">
+	  <scroll-view class="list-kind" scroll-y="true">
+	  	<view class="kind-item" wx:for="{{kinds}}" wx:key="{{item.id}}">
+		    <view class="kind-item-content">{{item.title}}</view>
+		  </view>
+	  </scroll-view>
+	  <scroll-view class="list-goods" scroll-y="true">
+	  	<view class="goods-item" wx:for="{{goods}}" wx:key="{{item.id}}">
+		    <view class="goods-item-icon"></view>
+		    <view class="goods-item-content">
+			    <view class="goods-item-title">{{item.title}}</view>
+			    <view class="goods-item-text">{{item.text}}</view>
+			  </view>
+		  </view>
+	  </scroll-view>
+  </view>
+</view>

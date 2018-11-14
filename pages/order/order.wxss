@@ -1,0 +1,70 @@
+/**list.wxss**/
+page{
+	width: 100%;
+	height: 100%;
+}
+.page {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.info {
+	width: 100%;
+	height: 200rpx;
+	padding: 20rpx;
+	box-sizing: border-box;
+	background-color: #333;
+	color: white;
+	display: flex;
+}
+
+.info-icon {
+	width: 160rpx;
+	height: 160rpx;
+	margin-right: 20rpx;
+	border-radius: 8rpx;
+	background-color: white;
+}
+
+.info-content {
+	flex: 1;
+}
+
+.content {
+	flex: 1;
+	display: flex;
+}
+
+.list-kind {
+	width: 100rpx;
+	height: 100%;
+	margin-right: 20rpx;
+	background-color: #fafafa;
+}
+
+.list-goods {
+	flex: 1;
+	height: 100%;
+}
+
+.kind-item {
+	padding: 20rpx;
+}
+
+.goods-item {
+	padding: 20rpx;
+	display: flex;
+}
+
+.goods-item-icon {
+	width: 120rpx;
+	height: 120rpx;
+	margin-right: 20rpx;
+	background-color: pink;
+}
+
+.goods-item-content{
+	flex: 1;
+}

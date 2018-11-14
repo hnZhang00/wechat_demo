@@ -9,7 +9,8 @@ Page({
   data: {
   	title: 'index Page',
     province: '',
-    city: ''
+    city: '',
+    district: ''
   },
   onLoad: function () {
     qqmapsdk = new QQMapWX({
@@ -99,9 +100,7 @@ Page({
 	      location,
 	      success: function (res) {
 	        console.log(res);
-	        let province = res.result.ad_info.province
-	        let city = res.result.ad_info.city
-	        return resolve({province, city});
+	        return resolve(res.result.ad_info);
 	      },
 	      fail: function (res) {
 	        console.log(res);
@@ -112,10 +111,33 @@ Page({
 	    });
     });
   },
-  showLocal: function({province, city}) {
+  getCityList() {
+  	qqmapsdk.getCityList({
+	    success: function(res) {
+        console.log(res);
+	    },
+	    fail: function(res) {
+        console.log(res);
+	    },
+	    complete: function(res) {
+        console.log(res);
+	    }
+		});
+  },
+  showLocal: function(localInfo) {
     this.setData({
-      province: province,
-      city: city
+      province: localInfo.province,
+      city: localInfo.city,
+      district: localInfo.district
     });
+  //   wx.switchTab({
+		// 	url: './home/home'
+		// });
+  },
+  goPageList() {
+  	app.globalData.city = this.data.city;
+  	wx.switchTab({
+			url: `./home/home`
+		});
   }
 })
